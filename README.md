@@ -13,3 +13,31 @@ teamup/
 ├── docker-compose.yml   # Local service configuration
 ├── .gitignore
 └── README.md
+
+
+## Backend
+
+The TeamUp backend is a Spring Boot modular monolith located in `/backend`.
+
+### Technology
+
+- Java 21
+- Spring Boot 3.5.16
+- Maven
+- PostgreSQL
+- Spring Data JPA
+- Flyway
+- Spring Boot Actuator
+- Jakarta Validation
+
+### Package Structure
+
+```text
+com.teamup
+├── config
+├── common
+├── user
+├── player
+├── team
+├── pickup
+└── request
