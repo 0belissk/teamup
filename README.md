@@ -41,3 +41,14 @@ com.teamup
 ├── team
 ├── pickup
 └── request
+
+## Local PostgreSQL Development
+
+TeamUp uses PostgreSQL for local development through Docker Compose.
+
+### Start PostgreSQL
+
+From the repository root:
+
+```bash
+docker compose up -d
