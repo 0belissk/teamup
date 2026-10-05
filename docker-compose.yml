@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: teamup-postgres
+    environment:
+      POSTGRES_DB: teamup
+      POSTGRES_USER: teamup
+      POSTGRES_PASSWORD: teamup_dev_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - teamup_postgres_data:/var/lib/postgresql
+
+volumes:
+  teamup_postgres_data:
