@@ -60,3 +60,12 @@ The React frontend runs on:
 
 ```text
 http://localhost:5173
+
+## Testing
+
+### Backend Tests
+
+Make sure the local PostgreSQL database is running:
+
+```bash
+docker compose up -d
