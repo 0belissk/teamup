@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  backend-tests:
+  backend:
     runs-on: ubuntu-latest
 
     services:
@@ -18,7 +18,7 @@ jobs:
         env:
           POSTGRES_DB: teamup
           POSTGRES_USER: teamup
-          POSTGRES_PASSWORD: teamup_dev_password
+          POSTGRES_PASSWORD: ${{ secrets.CI_DB_PASSWORD }}
         ports:
           - 5432:5432
         options: >-
@@ -38,15 +38,15 @@ jobs:
           java-version: '21'
           cache: maven
 
-      - name: Run backend tests
+      - name: Run backend build and tests
         working-directory: backend
         env:
           DB_URL: jdbc:postgresql://localhost:5432/teamup
           DB_USERNAME: teamup
-          DB_PASSWORD: teamup_dev_password
-        run: mvn test
+          DB_PASSWORD: ${{ secrets.CI_DB_PASSWORD }}
+        run: mvn verify
 
-  frontend-tests:
+  frontend:
     runs-on: ubuntu-latest
 
     steps:
@@ -67,3 +67,7 @@ jobs:
       - name: Run frontend tests
         working-directory: frontend
         run: npm test
+
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
