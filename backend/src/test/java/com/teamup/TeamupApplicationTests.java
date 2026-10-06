@@ -9,5 +9,4 @@ class TeamupApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
