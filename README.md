@@ -52,3 +52,11 @@ From the repository root:
 
 ```bash
 docker compose up -d
+
+
+## Frontend and Backend Communication
+
+The React frontend runs on:
+
+```text
+http://localhost:5173
